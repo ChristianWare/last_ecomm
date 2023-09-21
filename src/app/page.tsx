@@ -1,9 +1,8 @@
-import Image from 'next/image'
+import Image from "next/image";
+import NavUI from "./components/navbar/NavUI";
 
 export default function Home() {
-  return (
-   <main>
-    <h1>Yoo!!!!!</h1>
-   </main>
-  )
+  return <main>
+    {/* <NavUI cartItemsCount={9} /> */}
+  </main>;
 }

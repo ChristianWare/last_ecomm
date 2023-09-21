@@ -13,9 +13,12 @@ export default function CartIcon({ cartItems }: Props) {
       href='/cart'
     >
       <ShoppingCartIcon className='w-4 h-4' />
-      <div className='absolute bg-gray-700 text-white lg:text-xs text-[9px] -top-2 -right-1 w-4 h-4 lg:w-6 lg:h-6 flex items-center justify-center rounded-full'>
+      <div className='absolute bg-deep-orange-900 text-black lg:text-xs text-[9px] -top-2 -right-1 w-4 h-4 lg:w-6 lg:h-6 flex items-center justify-center rounded-full'>
         {cartItems}
       </div>
     </Link>
   );
 }
+
+
+// This is techincally the shopping cart. As you can see the number of items in the cart gets updated here. 

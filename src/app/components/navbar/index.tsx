@@ -1,9 +1,5 @@
 import NavUI from "./NavUI";
 
 export default function Navbar() {
-  return (
-    <div>
-      <NavUI cartItemsCount={0} />
-    </div>
-  );
+  return <NavUI cartItemsCount={0} />;
 }
