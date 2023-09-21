@@ -6,6 +6,7 @@ import { Button, Input } from "@material-tailwind/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { filterFormikErrors } from "@/app/utils/formikHelpers";
 
 const validationSchema = yup.object().shape({
   nmae: yup.string().required("Name is required!"),
@@ -33,9 +34,7 @@ export default function SignUp() {
     },
   });
 
-  const formErrors: string[] = [];
-
-  console.log(errors);
+  const formErrors: string[] = filterFormikErrors(errors, touched, values);
 
   const { email, name, password } = values;
 
@@ -47,6 +46,7 @@ export default function SignUp() {
         crossOrigin={undefined}
         onChange={handleChange}
         value={name}
+        onBlur={handleBlur}
       />
       <Input
         name='email'
@@ -54,6 +54,7 @@ export default function SignUp() {
         crossOrigin={undefined}
         onChange={handleChange}
         value={email}
+        onBlur={handleBlur}
       />
       <Input
         name='password'
@@ -62,6 +63,7 @@ export default function SignUp() {
         crossOrigin={undefined}
         onChange={handleChange}
         value={password}
+        onBlur={handleBlur}
       />
       <Button type='submit' className='w-full'>
         Sign up
